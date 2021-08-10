@@ -1,0 +1,20 @@
+{
+    "eslint.validate": ["vue", "javascript"],
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "vetur.validation.template": false,
+    "editor.formatOnPaste": true,
+    "editor.formatOnType": true,
+    "editor.formatOnSave": true,
+    "files.eol": "\n",
+    "vetur.format.defaultFormatter.css": "prettier",
+    "vetur.format.defaultFormatter.js": "prettier",
+    "vetur.format.options.tabSize": 2,
+    "vetur.format.options.useTabs": false,
+      "eslint.format.enable": true,
+    "[vue]": {
+        "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    },
+
+}
