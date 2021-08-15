@@ -52,6 +52,10 @@ const messages = {
       br: "Brazil",
       zw: "Zimbabwe",
     },
+    lang: {
+      tr: "Turkish",
+      en: "English",
+    },
   },
   tr: {
     close: " Kapat",
@@ -100,6 +104,10 @@ const messages = {
       ke: "Kenya",
       br: "Brezilya",
       zw: "Zimbabve",
+    },
+    lang: {
+      tr: "Türkçe",
+      en: "İngilizce",
     },
   },
 };

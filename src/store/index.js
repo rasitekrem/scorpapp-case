@@ -13,6 +13,7 @@ export default new Vuex.Store({
       state.user = user;
     },
     setLang(state, lang) {
+      localStorage.setItem("lang", lang);
       state.lang = lang;
     },
   },

@@ -27,6 +27,7 @@
       ></v-app-bar-nav-icon>
       <v-toolbar-title> Sayfa Adı</v-toolbar-title>
       <v-spacer />
+      <AppLanguageSwitcher />
       <app-user-control :user="user" :is-mobile="isMobile"></app-user-control>
     </v-app-bar>
 
@@ -41,7 +42,7 @@
 
     <v-footer app padless>
       <v-col class="text-center" cols="12">
-        {{ new Date().getFullYear() }} — <strong>Vuetify</strong>
+        {{ new Date().getFullYear() }} — <strong>Raşit Ekrem Ataklı</strong>
       </v-col>
     </v-footer>
   </v-app>
@@ -49,13 +50,21 @@
 
 <script>
 import AppUserControl from "./components/AppUserControl";
+import AppLanguageSwitcher from "./components/AppLanguageSwitcher";
 export default {
   name: "App",
   components: {
     AppUserControl,
+    AppLanguageSwitcher,
   },
   created() {
-    this.$i18n.locale = this.$store.getters["getLang"];
+    const lang = localStorage.getItem("lang");
+    if (lang) {
+      this.$i18n.locale = lang;
+      this.$store.commit("setLang", lang);
+    } else {
+      this.$i18n.locale = this.$store.getters["getLang"];
+    }
   },
   data: () => ({
     drawer: window.screen.width >= 576,
