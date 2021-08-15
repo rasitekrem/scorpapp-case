@@ -109,6 +109,7 @@ export default {
       if (this.$refs.loginForm.validate()) {
         this.$store.dispatch("login", this.formData).then(() => {
           this.closeLoginDialog();
+          this.$router.push("/");
         });
       }
     },

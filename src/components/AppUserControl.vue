@@ -1,6 +1,5 @@
 <template>
   <div
-    v-if="!isMobile"
     class="
       d-flex
       justify-content-between
