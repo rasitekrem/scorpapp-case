@@ -62,6 +62,18 @@ export default {
     user() {
       return this.$store.getters["getUser"];
     },
+    items() {
+      return [
+        {
+          icon: "mdi-home",
+          title: this.$t("menu.home"),
+        },
+        {
+          icon: "mdi-card-account-mail",
+          title: this.$t("menu.contactUs"),
+        },
+      ];
+    },
   },
 };
 </script>
