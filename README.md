@@ -1,24 +1,28 @@
-# scorpapp-case
+# ScorpApp Case
 
-## Project setup
-```
-npm install
-```
+Merhaba. Bu uygulama basit bir şekilde Vuetify kullanımı, Webpack, localization, form validation ve state management işlemlerini barındırmaktadır.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## Gereksinimler
 
-### Compiles and minifies for production
-```
-npm run build
-```
+- Npm
+- Vue Cli
+- VS Code **dbaeumer.vscode-eslint** eklentisi
 
-### Lints and fixes files
-```
-npm run lint
-```
+## Kurulum
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+    npm install
+
+ile projedeki paketlerin kurulumunu yapıyoruz.
+
+    npm run serve
+
+ile projeyi ayağa kaldırıyoruz.
+
+## Kullanılan Teknolojiler
+
+- Vue
+- Vuetify
+- i18n
+- Webpack
+- Eslint
+- Babel
