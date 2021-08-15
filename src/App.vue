@@ -25,7 +25,7 @@
         class="order-md-first order-last"
         @click.stop="drawer = !drawer"
       ></v-app-bar-nav-icon>
-      <v-toolbar-title> Sayfa Adı</v-toolbar-title>
+      <v-toolbar-title> {{ $t($route.name) }}</v-toolbar-title>
       <v-spacer />
       <AppLanguageSwitcher />
       <app-user-control :user="user" :is-mobile="isMobile"></app-user-control>

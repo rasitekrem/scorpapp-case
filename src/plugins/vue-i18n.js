@@ -66,7 +66,7 @@ const messages = {
     },
     menu: {
       home: "Ana Sayfa",
-      contactUs: "Bize Ulaş",
+      contactUs: "Bize Ulaşın",
     },
     login: {
       label: "Giriş Yap",
