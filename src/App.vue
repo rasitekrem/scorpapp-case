@@ -2,7 +2,12 @@
   <v-app class="">
     <v-navigation-drawer app v-model="drawer" :right="isMobile">
       <v-list dense nav>
-        <v-list-item v-for="item in items" :key="item.title" link>
+        <v-list-item
+          v-for="item in items"
+          :key="item.title"
+          link
+          :to="item.route"
+        >
           <v-list-item-icon>
             <v-icon>{{ item.icon }}</v-icon>
           </v-list-item-icon>
@@ -67,10 +72,12 @@ export default {
         {
           icon: "mdi-home",
           title: this.$t("menu.home"),
+          route: "/",
         },
         {
           icon: "mdi-card-account-mail",
           title: this.$t("menu.contactUs"),
+          route: "/contact-us",
         },
       ];
     },
