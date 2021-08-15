@@ -27,7 +27,7 @@
       </template>
       <v-list dense elevation="0">
         <v-list-item @click="handleLogout()">
-          <v-list-item-title class="fs-x-large"> Çıkış Yap </v-list-item-title>
+          <v-list-item-title>{{ $t("login.logoutBtn") }}</v-list-item-title>
         </v-list-item>
       </v-list>
     </v-menu>

@@ -14,6 +14,16 @@ const messages = {
       home: "Home Page",
       contactUs: "Contact Us",
     },
+    login: {
+      label: "Log In",
+      name: "Name",
+      surname: "Surname",
+      email: "E-Mail",
+      password: "Password",
+      title: "Title",
+      loginBtn: "Log In",
+      logoutBtn: "Log Out",
+    },
   },
   tr: {
     lorem: {
@@ -24,6 +34,16 @@ const messages = {
     menu: {
       home: "Ana Sayfa",
       contactUs: "Bize Ulaş",
+    },
+    login: {
+      label: "Giriş Yap",
+      name: "İsim",
+      surname: "Soy İsim",
+      email: "E-Posta",
+      password: "Parola",
+      title: "Unvan",
+      loginBtn: "Giriş Yap",
+      logoutBtn: "Çıkış Yap",
     },
   },
 };
