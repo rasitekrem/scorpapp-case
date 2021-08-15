@@ -5,7 +5,11 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    user: null,
+    user: {
+      name: "test",
+      surname: "hesap",
+      email: "test@mail.com",
+    },
     lang: "en",
   },
   mutations: {

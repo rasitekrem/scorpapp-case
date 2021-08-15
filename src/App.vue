@@ -43,14 +43,10 @@
 </template>
 
 <script>
-// import AppHeader from "./components/AppHeader";
-// import AppFooter from "./components/AppFooter";
 import AppUserControl from "./components/AppUserControl";
 export default {
   name: "App",
   components: {
-    // AppHeader,
-    // AppFooter,
     AppUserControl,
   },
   created() {
