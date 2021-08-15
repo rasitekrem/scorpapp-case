@@ -4,8 +4,35 @@ import Vuex from "vuex";
 Vue.use(Vuex);
 
 export default new Vuex.Store({
-  state: {},
-  mutations: {},
-  actions: {},
+  state: {
+    user: null,
+    lang: "en",
+  },
+  mutations: {
+    setUser(state, user) {
+      state.user = user;
+    },
+    setLang(state, lang) {
+      state.lang = lang;
+    },
+  },
+  actions: {
+    login({ commit }, formData) {
+      commit("setUser", {
+        username: formData.username,
+        name: formData.name,
+        surname: formData.surname,
+        title: formData.title,
+      });
+    },
+  },
+  getters: {
+    getUser(state) {
+      return state.user;
+    },
+    getLang(state) {
+      return state.lang;
+    },
+  },
   modules: {},
 });

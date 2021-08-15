@@ -53,13 +53,18 @@ export default {
     // AppFooter,
     AppUserControl,
   },
+  created() {
+    this.$i18n.locale = this.$store.getters["getLang"];
+  },
   data: () => ({
     drawer: window.screen.width >= 576,
-    user: null,
   }),
   computed: {
     isMobile() {
       return window.screen.width < 576;
+    },
+    user() {
+      return this.$store.getters["getUser"];
     },
   },
 };
