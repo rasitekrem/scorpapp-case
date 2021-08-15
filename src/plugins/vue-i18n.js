@@ -5,6 +5,7 @@ Vue.use(VueI18n);
 
 const messages = {
   en: {
+    close: "Close",
     lorem: {
       title: "What is Lorem Ipsum?",
       description:
@@ -29,9 +30,31 @@ const messages = {
       maxCount: "{field} field can be up to {max_count} characters",
       minCount: "{field} field must be at least {min_count} characters",
       isEmail: "E-mail must be valid",
+      isNumber: "Phonenumber must be valid",
+    },
+    contactUs: {
+      label: "Contact Us",
+      name: "Name",
+      email: "E-Mail",
+      title: "Title",
+      text: "Text",
+      country: "Country",
+      successMessage: "Your message has reached us successfully",
+      phonenumber: "Phone Number",
+    },
+    countries: {
+      tr: "Turkey",
+      us: "United States of America",
+      gb: "United Kingdom",
+      de: "Germany",
+      se: "Sweden",
+      ke: "Kenya",
+      br: "Brazil",
+      zw: "Zimbabwe",
     },
   },
   tr: {
+    close: " Kapat",
     lorem: {
       title: "Lorem Ipsum Nedir?",
       description:
@@ -56,6 +79,27 @@ const messages = {
       maxCount: "{field} alanı en fazla {max_count} karakter olabilir",
       minCount: "{field} alanı en az {min_count} karakter olmalıdır",
       isEmail: "Geçersiz E-Posta adresi",
+      isNumber: "Geçersiz telefon numarası",
+    },
+    contactUs: {
+      label: "Bize Ulaşın",
+      name: "İsim",
+      email: "E-Posta",
+      phonenumber: "Telefon Numarası",
+      title: "Başlık",
+      text: "Metin",
+      country: "Ülke",
+      successMessage: "Mesajınız bize başarıyla ulaştı.",
+    },
+    countries: {
+      tr: "Türkiye",
+      us: "Amerika Birleşik Devletleri",
+      gb: "Birleşik Krallık",
+      de: "Almanya",
+      se: "İsveç",
+      ke: "Kenya",
+      br: "Brezilya",
+      zw: "Zimbabve",
     },
   },
 };

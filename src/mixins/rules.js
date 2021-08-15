@@ -20,5 +20,8 @@ export const rules = {
     isEmail() {
       return (v) => /.+@.+\..+/.test(v) || this.$t("rules.isEmail");
     },
+    isNumber() {
+      return (v) => !isNaN(v) || this.$t("rules.isNumber");
+    },
   },
 };
