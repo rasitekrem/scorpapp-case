@@ -15,7 +15,10 @@
               <v-text-field
                 v-model="formData.title"
                 :label="$t('login.title')"
-                :rules="titleRules"
+                :rules="[
+                  required($t('login.title')),
+                  maxCount($t('login.title'), 10),
+                ]"
                 outlined
                 required
                 dense
@@ -25,7 +28,10 @@
               <v-text-field
                 v-model="formData.name"
                 :label="$t('login.name')"
-                :rules="nameRules"
+                :rules="[
+                  required($t('login.name')),
+                  minCount($t('login.name'), 3),
+                ]"
                 outlined
                 required
                 dense
@@ -35,7 +41,10 @@
               <v-text-field
                 v-model="formData.surname"
                 :label="$t('login.surname')"
-                :rules="surnameRules"
+                :rules="[
+                  required($t('login.surname')),
+                  minCount($t('login.surname'), 3),
+                ]"
                 outlined
                 required
                 dense
@@ -45,7 +54,7 @@
               <v-text-field
                 v-model="formData.email"
                 :label="$t('login.email')"
-                :rules="emailRules"
+                :rules="[required($t('login.email')), isEmail()]"
                 required
                 dense
                 outlined
@@ -56,7 +65,10 @@
                 v-model="formData.password"
                 :label="$t('login.password')"
                 type="password"
-                :rules="passwordRules"
+                :rules="[
+                  required($t('login.password')),
+                  minCount($t('login.password'), 6),
+                ]"
                 required
                 outlined
                 dense
@@ -74,7 +86,9 @@
   </v-card>
 </template>
 <script>
+import { rules } from "@/mixins/rules";
 export default {
+  mixins: [rules],
   data() {
     return {
       formData: {
@@ -97,49 +111,6 @@ export default {
           this.closeLoginDialog();
         });
       }
-    },
-  },
-  computed: {
-    titleRules() {
-      return [
-        (v) => !!v || this.$t("loginRules.titleRules.required"),
-        (v) =>
-          (v && v.length < 10) ||
-          this.$t("loginRules.titleRules.maxCount").replace("{max_count}", 10),
-      ];
-    },
-    nameRules() {
-      return [
-        (v) => !!v || this.$t("loginRules.nameRules.required"),
-        (v) =>
-          (v && v.length >= 3) ||
-          this.$t("loginRules.nameRules.minCount").replace("{min_count}", 3),
-      ];
-    },
-    surnameRules() {
-      return [
-        (v) => !!v || this.$t("loginRules.surnameRules.required"),
-        (v) =>
-          (v && v.length >= 3) ||
-          this.$t("loginRules.surnameRules.minCount").replace("{min_count}", 3),
-      ];
-    },
-    emailRules() {
-      return [
-        (v) => !!v || this.$t("loginRules.emailRules.required"),
-        (v) => /.+@.+\..+/.test(v) || this.$t("loginRules.emailRules.valid"),
-      ];
-    },
-    passwordRules() {
-      return [
-        (v) => !!v || this.$t("loginRules.passwordRules.required"),
-        (v) =>
-          (v && v.length >= 6) ||
-          this.$t("loginRules.passwordRules.minCount").replace(
-            "{min_count}",
-            6
-          ),
-      ];
     },
   },
 };
