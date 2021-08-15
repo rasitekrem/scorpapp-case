@@ -5,12 +5,8 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    user: {
-      name: "test",
-      surname: "hesap",
-      email: "test@mail.com",
-    },
-    lang: "en",
+    user: null,
+    lang: "tr",
   },
   mutations: {
     setUser(state, user) {
@@ -23,7 +19,7 @@ export default new Vuex.Store({
   actions: {
     login({ commit }, formData) {
       commit("setUser", {
-        username: formData.username,
+        email: formData.email,
         name: formData.name,
         surname: formData.surname,
         title: formData.title,

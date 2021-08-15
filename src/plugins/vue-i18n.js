@@ -24,6 +24,28 @@ const messages = {
       loginBtn: "Log In",
       logoutBtn: "Log Out",
     },
+    loginRules: {
+      titleRules: {
+        required: "Title field is required",
+        maxCount: "Title field can be up to {max_count} characters",
+      },
+      nameRules: {
+        required: "Name field is required",
+        minCount: "Name field must be at least {min_count} characters",
+      },
+      surnameRules: {
+        required: "Surname field is required",
+        minCount: "Surname field must be at least {min_count} characters",
+      },
+      emailRules: {
+        required: "E-Mail field is required",
+        valid: "E-mail must be valid",
+      },
+      passwordRules: {
+        required: "Password field is required",
+        minCount: "Password field must be at least {min_count} characters",
+      },
+    },
   },
   tr: {
     lorem: {
@@ -44,6 +66,28 @@ const messages = {
       title: "Unvan",
       loginBtn: "Giriş Yap",
       logoutBtn: "Çıkış Yap",
+    },
+    loginRules: {
+      titleRules: {
+        required: "Unvan alanı gereklidir",
+        maxCount: "Unvan alanı en fazla {max_count} karakter olabilir",
+      },
+      nameRules: {
+        required: "İsim alanı gereklidir",
+        minCount: "İsim alanı en az {min_count} karakter olmalıdır",
+      },
+      surnameRules: {
+        required: "Soyisim alanı gereklidir",
+        minCount: "Soyisim alanı en az {min_count} karakter olmalıdır",
+      },
+      emailRules: {
+        required: "E-Posta alanı gereklidir",
+        valid: "Geçersiz E-Posta adresi",
+      },
+      passwordRules: {
+        required: "Parola alanı gereklidir",
+        minCount: "Parola alanı en az {min_count} karakter olmalıdır",
+      },
     },
   },
 };
