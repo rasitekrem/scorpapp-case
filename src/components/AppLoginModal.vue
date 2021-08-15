@@ -24,7 +24,7 @@
                 dense
               ></v-text-field>
             </v-col>
-            <v-col sm="12" md="6">
+            <v-col cols="12" lg="6">
               <v-text-field
                 v-model="formData.name"
                 :label="$t('login.name')"
@@ -37,7 +37,7 @@
                 dense
               ></v-text-field>
             </v-col>
-            <v-col sm="12" md="6">
+            <v-col cols="12" lg="6">
               <v-text-field
                 v-model="formData.surname"
                 :label="$t('login.surname')"

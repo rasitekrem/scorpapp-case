@@ -25,7 +25,6 @@
         class="order-md-first order-last"
         @click.stop="drawer = !drawer"
       ></v-app-bar-nav-icon>
-      <v-toolbar-title> {{ $t($route.name) }}</v-toolbar-title>
       <v-spacer />
       <AppLanguageSwitcher />
       <app-user-control :user="user" :is-mobile="isMobile"></app-user-control>
@@ -35,8 +34,15 @@
     <v-main>
       <!-- Provides the application the proper gutter -->
       <v-container fluid>
+        <v-card elevation="0">
+          <v-card-title>
+            {{ $t($route.name) }}
+          </v-card-title>
+          <v-card-text>
+            <router-view></router-view>
+          </v-card-text>
+        </v-card>
         <!-- If using vue-router -->
-        <router-view></router-view>
       </v-container>
     </v-main>
 
