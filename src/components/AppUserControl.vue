@@ -1,12 +1,5 @@
 <template>
-  <div
-    class="
-      d-flex
-      justify-content-between
-      align-items-center
-      order-md-last order-first
-    "
-  >
+  <div class="d-flex justify-content-between align-items-center">
     <v-btn
       v-if="!user"
       class="px-5 mr-2"
@@ -35,10 +28,6 @@ export default {
     AppLoginModal,
   },
   props: {
-    isMobile: {
-      type: Boolean,
-      default: false,
-    },
     user: {
       type: Object,
       default: () => null,

@@ -1,7 +1,13 @@
 <template>
   <v-app class="">
-    <v-navigation-drawer app v-model="drawer" :right="isMobile">
+    <v-navigation-drawer app v-model="drawer" right>
       <v-list dense nav>
+        <v-list-item>
+          <app-user-control :user="user"></app-user-control>
+        </v-list-item>
+        <v-list-item>
+          <AppLanguageSwitcher />
+        </v-list-item>
         <v-list-item
           v-for="item in items"
           :key="item.title"
@@ -21,13 +27,38 @@
 
     <v-app-bar app>
       <!-- -->
+      <v-card-title>
+        <v-icon class="mr-3">mdi-sine-wave</v-icon>
+        <span>{{ $t($route.name) }}</span>
+      </v-card-title>
+      <v-spacer></v-spacer>
+      <div class="d-sm-flex d-none">
+        <v-list-item
+          v-for="item in items"
+          :key="item.title"
+          link
+          :to="item.route"
+        >
+          <v-list-item-icon>
+            <v-icon>{{ item.icon }}</v-icon>
+          </v-list-item-icon>
+
+          <v-list-item-content>
+            <v-list-item-title>{{ item.title }}</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </div>
+      <div class="d-sm-block d-none">
+        <AppLanguageSwitcher />
+      </div>
+      <div class="d-sm-block d-none">
+        <app-user-control :user="user"></app-user-control>
+      </div>
+
       <v-app-bar-nav-icon
-        class="order-md-first order-last"
-        @click.stop="drawer = !drawer"
+        class="d-sm-none"
+        @click="drawer = !drawer"
       ></v-app-bar-nav-icon>
-      <v-spacer />
-      <AppLanguageSwitcher />
-      <app-user-control :user="user" :is-mobile="isMobile"></app-user-control>
     </v-app-bar>
 
     <!-- Sizes your content based upon application components -->
@@ -35,9 +66,6 @@
       <!-- Provides the application the proper gutter -->
       <v-container fluid>
         <v-card elevation="0">
-          <v-card-title>
-            {{ $t($route.name) }}
-          </v-card-title>
           <v-card-text>
             <router-view></router-view>
           </v-card-text>
@@ -73,12 +101,9 @@ export default {
     }
   },
   data: () => ({
-    drawer: window.screen.width >= 576,
+    drawer: false,
   }),
   computed: {
-    isMobile() {
-      return window.screen.width < 576;
-    },
     user() {
       return this.$store.getters["getUser"];
     },
